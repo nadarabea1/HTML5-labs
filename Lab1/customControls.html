@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1 | Custom Controls</title>
+</head>
+<body>
+    <video src="Stitch.mp4" width="600px" height="400px"></video><br/>
+    <input type="range" min="0" id="duration" max="111" /> 
+    <button id="play">play</button>
+    <button id="stop">stop</button>
+    <button id="doubleBackward"><<</button>
+    <button id="backward"><</button>
+    <button id="doubleForward">></button>
+    <button id="forward">>></button> <br/>
+    <input type="range" min="0" id="voice" max="10" /> 
+    <button id="mute">Mute</button><br />
+    <label>Speed</label>
+    <input type="range" min="0.25" id="speed" max="2" step="0.25" value="1"/> <br />
+    <button id="fullScreen">Full Screen</button>
+</body>
+<script>
+    var video = document.getElementsByTagName('video')[0];
+    var durInput = document.getElementById('duration');
+    var speedInput = document.getElementById('speed');
+    
+    durInput.setAttribute('max', parseInt(video.duration));
+
+    document.getElementById('play').addEventListener('click', () => {
+        video.play();
+    });
+
+    document.getElementById('stop').addEventListener('click', () => {
+        video.pause();
+    });
+
+    document.getElementById('doubleBackward').addEventListener('click', () => {
+        video.currentTime -= 10;
+    });
+
+    document.getElementById('backward').addEventListener('click', () => {
+        video.currentTime -= 5;
+    });
+
+    document.getElementById('doubleForward').addEventListener('click', () => {
+        video.currentTime += 10;
+    });
+
+    document.getElementById('forward').addEventListener('click', () => {
+        video.currentTime += 5;
+    });
+
+    document.getElementById('mute').addEventListener('click', () => {
+        video.muted = !video.muted;
+        document.getElementById('mute').innerText = video.muted ? 'Unmute' : 'Mute';
+    });
+
+    document.getElementById('speed').addEventListener('input', () => {
+        video.playbackRate = parseFloat(speedInput.value);
+    });
+
+    document.getElementById("fullScreen").addEventListener("click", ()=>{
+        video.requestFullscreen();
+    })
+
+    video.addEventListener('timeupdate', () => {
+        durInput.value = video.currentTime;
+    });
+
+</script>
+</html>

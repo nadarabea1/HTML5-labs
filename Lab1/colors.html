@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1 | Colors</title>
+    <style>
+        #red {
+            accent-color: red;
+        }
+
+        #green {
+            accent-color: green;
+        }
+
+        #blue {
+            accent-color: blue;
+        }
+        #alpha {
+            accent-color: black;
+        }
+    </style>
+</head>
+<body>
+    <label>Red</label>
+    <input type="range" id="red" max="255" min="0" step="1" value="0"/>
+    <br />
+    <label>Green</label>
+    <input type="range" id="green" max="255" min="0" step="1" value="0"/>
+    <br />
+    <label>Blue</label>
+    <input type="range" id="blue" max="255" min="0" step="1" value="0"/>
+    <br />
+    <label>Alpha</label>
+    <input type="range" id="alpha" max="1" min="0" step="0.1" value="1"/>
+    <br />
+    <p>Change the 3 Color Ranges above and observe my color Change</p>
+    
+    <script>
+        let red = document.getElementById("red");
+        let green = document.getElementById("green");
+        let blue = document.getElementById("blue");
+        let alpha = document.getElementById("alpha");
+
+        function updateColor() {
+            document.querySelector('p').style.color = `rgba(${red.value}, ${green.value}, ${blue.value}, ${alpha.value})`;
+        }
+
+        document.getElementById("red").addEventListener("input", updateColor);
+        document.getElementById("green").addEventListener("input", updateColor);
+        document.getElementById("blue").addEventListener("input", updateColor);
+        document.getElementById("alpha").addEventListener("input", updateColor);
+
+    </script>
+</body>
+</html>
