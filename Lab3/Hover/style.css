@@ -1,0 +1,22 @@
+input{    
+    padding: 10px;
+    width: 200px;
+    border-radius: 22px;
+    border: 2px solid;
+    font-size: 15px;
+}
+input:hover{
+    background-color: rgb(206, 87, 106);
+    box-shadow: -4px 4px 4px rgb(71, 166, 204);
+    animation-name: anim;
+    animation-duration: 5s; 
+    animation-fill-mode: forwards; 
+}
+ @keyframes anim {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(120px);
+    }
+ }
