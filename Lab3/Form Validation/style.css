@@ -1,0 +1,15 @@
+
+input[type="text"]:invalid:not(:placeholder-shown) ~ #s1 {
+    display: inline;
+}
+
+input[type="text"]:valid:empty ~ #s1 {
+    display: none;
+}
+input[type="email"]:invalid:not(:placeholder-shown) ~ #s2 {
+    display: inline;
+}
+
+input[type="email"]:valid:empty ~ #s2 {
+    display: none;
+}
