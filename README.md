@@ -23,3 +23,7 @@ This lab consists of three parts:
 1. **Form Validation**: Implement form validation using CSS.
 2. **Hover**: Create a button with hover effects and animations using CSS.
 3. **Card**: Use CSS to draw spades.
+
+## Lab 4: Bootstrap
+
+This lab focuses on using Bootstrap classes to create responsive layouts and components.
